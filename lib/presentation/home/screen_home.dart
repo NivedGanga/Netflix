@@ -33,7 +33,7 @@ class ScreenHome extends StatelessWidget {
               children: [
                 const FirstMovieCard(),
                 const MovieListView(title: 'New Releases'),
-                const MovieListView(title: 'Now Trending'),
+                const MovieListView(title: 'Now Trending hi hello'),
                 kheight20,
                 NumberedMovieList(),
                 const MovieListView(title: 'Malayalam Movies'),
