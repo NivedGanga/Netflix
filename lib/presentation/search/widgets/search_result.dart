@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/main_movie_tile.dart';
-import 'package:netflix/presentation/downloads/widgets/screen_downloads.dart';
+import 'package:netflix/presentation/downloads/screen_downloads.dart';
 import 'package:netflix/presentation/search/widgets/search_idle.dart';
 import 'package:netflix/presentation/search/widgets/search_movie_card..dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/title_text.dart';

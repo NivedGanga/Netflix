@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/presentation/downloads/widgets/error_notification.dart';
 
 class FirstMovieCard extends StatelessWidget {
   const FirstMovieCard({super.key});
@@ -42,7 +43,9 @@ class FirstMovieCard extends StatelessWidget {
           children: [
             const ButtonWithText(icon: Icons.add, text: 'My List'),
             TextButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                errorNotification(text: 'sdhisdhoa');
+              },
               icon: const Icon(
                 Icons.play_arrow,
                 size: 28,

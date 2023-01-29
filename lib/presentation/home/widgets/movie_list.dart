@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/main_movie_tile.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/title_text.dart';
 

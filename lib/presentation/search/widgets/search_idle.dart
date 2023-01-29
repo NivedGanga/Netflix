@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/title_text.dart';
 
 const image =

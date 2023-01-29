@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 
 class MainMovieCard extends StatelessWidget {
   const MainMovieCard({super.key});

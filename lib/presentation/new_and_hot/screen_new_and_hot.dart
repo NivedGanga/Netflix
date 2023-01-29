@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/common_widgets/app_bar_widget.dart';
 import 'package:netflix/presentation/new_and_hot/commingsoonpage.dart';
 import 'package:netflix/presentation/new_and_hot/everyonewatchingpage.dart';

@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:netflix/core/colors/colors.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/home/widgets/first_movie_card.dart';
 import 'package:netflix/presentation/home/widgets/movie_list.dart';
 import 'package:netflix/presentation/home/widgets/numbered_movie_list.dart';

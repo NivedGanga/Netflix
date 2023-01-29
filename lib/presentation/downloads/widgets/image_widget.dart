@@ -1,8 +1,7 @@
-
-
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
 
 class DownloadsImageWidget extends StatelessWidget {
@@ -27,7 +26,7 @@ class DownloadsImageWidget extends StatelessWidget {
           width: size.width,
           height: size.height,
           decoration: BoxDecoration(
-              color: kwhitecolor,
+              color: Color.fromARGB(255, 57, 57, 57),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(imageLink),

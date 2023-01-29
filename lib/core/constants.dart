@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const kwidth = SizedBox(
   width: 10,
@@ -17,3 +18,5 @@ final imageLinks = [
 final bradius30 = BorderRadius.circular(30);
 
 final bradius20 = BorderRadius.circular(20);
+
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
