@@ -22,7 +22,10 @@ class ScreenMainmenu extends StatelessWidget {
         child: ValueListenableBuilder(
           valueListenable: bottomNavbarIndexNotifier,
           builder: (context, value, child) {
-            return pages[value];
+            return IndexedStack(
+              index: value,
+              children: pages,
+            );
           },
         ),
       ),
