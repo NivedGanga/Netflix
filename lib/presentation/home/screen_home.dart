@@ -28,7 +28,6 @@ class ScreenHome extends StatelessWidget {
       child: Stack(
         children: [
           SingleChildScrollView(
-            
             child: Column(
               children: [
                 const FirstMovieCard(),

@@ -10,7 +10,6 @@ errorNotification({required String text}) {
     backgroundColor: Color.fromARGB(121, 134, 134, 134),
     textColor: Colors.white,
     fontSize: 16.0,
-    
   );
   // ScaffoldMessenger.of(scaffoldKey.currentState!.context).showSnackBar(
   //   SnackBar(

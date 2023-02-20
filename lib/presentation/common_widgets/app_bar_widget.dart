@@ -3,7 +3,7 @@ import 'package:netflix/core/constants.dart';
 
 class AppbarWidget extends StatelessWidget {
   final String title;
- const AppbarWidget({super.key, required this.title});
+  const AppbarWidget({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

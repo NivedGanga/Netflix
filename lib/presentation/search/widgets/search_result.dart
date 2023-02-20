@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/main_movie_tile.dart';
 import 'package:netflix/presentation/downloads/screen_downloads.dart';
@@ -19,17 +21,31 @@ class SearchResult extends StatelessWidget {
         kheight,
         const TitleText(title: 'Movies & TV'),
         kheight,
-        Expanded(
-            child: GridView.count(
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          crossAxisCount: 3,
-          shrinkWrap: true,
-          childAspectRatio: 3 / 5,
-          children: List.generate(20, (index) {
-            return const SearchMovieCard();
-          }),
-        ))
+        BlocBuilder<SearchBloc, SearchState>(
+          builder: (context, state) {
+            if (state.isloading) {
+              return CircularProgressIndicator();
+            }
+            if (state.isError) {
+              return Center(
+                child: Text('No Results'),
+              );
+            }
+            return Expanded(
+                child: GridView.count(
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              childAspectRatio: 3 / 5,
+              children: List.generate(state.searchResult.length, (index) {
+                return SearchMovieCard(
+                  imagepath: state.searchResult[index].posterPath,
+                );
+              }),
+            ));
+          },
+        )
       ],
     );
   }

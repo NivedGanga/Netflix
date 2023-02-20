@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
@@ -13,13 +15,13 @@ class DownloadsRepository extends IDownloadClass {
     try {
       final Response response =
           await Dio(BaseOptions()).get(ApiEndPoints.downloads);
+
       if (response.statusCode == 200 || response.statusCode == 201) {
         List<Downloads> downloadList = [];
-        (response.data['results'] as List)
-            .map((e) =>
-                downloadList.add(Downloads.fromJson(e as Map<String, dynamic>)))
-            .toList();
-        //    log(downloadList.toString());
+        (response.data['results'] as List).map((e) {
+          downloadList.add(Downloads.fromJson(e as Map<String, dynamic>));
+        }).toList();
+
         return Right(downloadList);
       } else {
         return const Left(MainFailure.serverFailure());

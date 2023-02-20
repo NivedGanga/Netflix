@@ -4,9 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:netflix/core/constants.dart';
 import 'package:netflix/domain/downloads/i_download_repo.dart';
 import 'package:netflix/domain/downloads/model/downloads.dart';
 import 'package:netflix/domain/failure/main_failure.dart';
@@ -23,7 +21,7 @@ class DownloadsBloc extends Bloc<DownloadsEvent, DownloadsState> {
       emit(state.copyWith(
           isLoading: true, downloadFailureSuccessOption: const None()));
       final downloadOption = await downloadRepo.getDownloadsImage();
-      log(downloadOption.toString());
+      //  log(downloadOption.toString());
       emit(downloadOption.fold(
         (failure) {
           if (failure == const MainFailure.serverFailure()) {

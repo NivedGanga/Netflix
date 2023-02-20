@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
+import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/constants.dart';
+import 'package:netflix/core/string.dart';
+import 'package:netflix/domain/downloads/model/downloads.dart';
 import 'package:netflix/presentation/common_widgets/main_movie_tile/title_text.dart';
 
 const image =
@@ -19,15 +24,37 @@ class SearchIdle extends StatelessWidget {
         ),
         kheight,
         Expanded(
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return const TopSearchItemWidget();
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              if (state.isloading) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (state.isError) {
+                return Center(
+                  child: Text('Something went wrong'),
+                );
+              }
+              if (state.ideaList.isEmpty) {
+                return Center(
+                  child: Text('Something went wrong'),
+                );
+              }
+              return ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                 
+                  return TopSearchItemWidget(
+                    listItem: state.ideaList[index],
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return kheight;
+                },
+                itemCount: state.ideaList.length,
+              );
             },
-            separatorBuilder: (context, index) {
-              return kheight;
-            },
-            itemCount: 10,
           ),
         )
       ],
@@ -36,7 +63,11 @@ class SearchIdle extends StatelessWidget {
 }
 
 class TopSearchItemWidget extends StatelessWidget {
-  const TopSearchItemWidget({super.key});
+  TopSearchItemWidget({
+    super.key,
+    required this.listItem,
+  });
+  final Downloads listItem;
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +79,17 @@ class TopSearchItemWidget extends StatelessWidget {
           width: width * 0.33,
           height: width * 0.18,
           decoration: BoxDecoration(
-              image: const DecorationImage(
-                  image: NetworkImage(image), fit: BoxFit.cover),
+              image: DecorationImage(
+                  image: NetworkImage(imageBaseUrl + listItem.backdropPath),
+                  fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(5)),
         ),
         kwidth,
-        const Expanded(
+        Expanded(
           child: Text(
-            'Movie Name',
+            listItem.originalname,
             style: TextStyle(
+              color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

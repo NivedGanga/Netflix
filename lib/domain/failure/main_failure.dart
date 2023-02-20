@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:netflix/core/constants.dart';
@@ -10,5 +9,4 @@ class MainFailure with _$MainFailure {
   const factory MainFailure.serverFailure() = _serverFailure;
 }
 
-     //ScaffoldMessenger.of(scaffoldKey.currentState!.context).showSnackBar(SnackBar(content: Text('data')));
-  
+//ScaffoldMessenger.of(scaffoldKey.currentState!.context).showSnackBar(SnackBar(content: Text('data')));
