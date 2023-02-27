@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 const kwidth = SizedBox(
@@ -9,6 +8,9 @@ const kheight = SizedBox(
 );
 const kheight20 = SizedBox(
   height: 20,
+);
+const kwidth20 = SizedBox(
+  width: 20,
 );
 final imageLinks = [
   'https://www.themoviedb.org/t/p/w220_and_h330_face/ryKwNlAfDXu0do6SX9h4G9Si1kG.jpg',

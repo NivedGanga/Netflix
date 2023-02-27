@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix/core/colors/colors.dart';
 
 class DownloadsImageWidget extends StatelessWidget {
   const DownloadsImageWidget(

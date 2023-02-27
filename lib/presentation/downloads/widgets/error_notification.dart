@@ -11,10 +11,4 @@ errorNotification({required String text}) {
     textColor: Colors.white,
     fontSize: 16.0,
   );
-  // ScaffoldMessenger.of(scaffoldKey.currentState!.context).showSnackBar(
-  //   SnackBar(
-  //     content: Flexible(child: Text(text)),
-  //     behavior: SnackBarBehavior.floating,
-  //   ),
-  // );
 }
